@@ -49,6 +49,8 @@ MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -168,45 +170,3 @@ STATIC_ROOT = '/vol/web/static'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
-# Amazon S3 configuration 
-
-'''
-AWS_ACCESS_KEY_ID = "" # - Enter your AWS Access Key ID HERE
-AWS_SECRET_ACCESS_KEY = "" # - Enter your AWS Secret Access Key ID HERE
-
-AWS_STORAGE_BUCKET_NAME = '' # - Enter your S3 bucket name HERE
-
-# Django 4.2 >
-STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
-
-# Django < 4.2 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-
-
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-
-#AWS_S3_FILE_OVERWRITE = False
-
-
-# Admin styling adjustment
-
-ADMIN_MEDIA_PREFIX = '/static/admin/'
-
-'''
-
-
-
-
-
-
-
-
-
-
-
-
